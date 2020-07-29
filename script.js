@@ -1,46 +1,42 @@
-$("#currentDay").text(moment().format("dddd, MMM Do"))
+$("#currentDay").text(moment().format("dddd, MMMM Do"))
 
-var startHour = 9
-var endHour = 17
+let startHour = 9
+let endHour = 17
 
-for (var i=startHour;i<=endHour;i++){
-    var row = document.createElement("div");
+for (let i = startHour; i <= endHour; i++) {
+    let row = document.createElement("div");
     row.setAttribute("class", "row")
 
-    var hour = document.createElement("div");
+    let hour = document.createElement("div");
     hour.setAttribute("class", "hour col-1")
-    //hour content
-    var time = moment(i, "H")
-    var timeFormatted = time.format("hA")
+    let time = moment(i, "H")
+    let timeFormatted = time.format("hA")
     hour.innerText = timeFormatted
     row.appendChild(hour)
 
-    var description = document.createElement("textarea");
+    let description = document.createElement("textarea");
     description.setAttribute("class", "description col-10")
-    //description content
     currentHour = parseInt(moment().format("H"))
 
-    if (i<currentHour){
+    if (i < currentHour) {
         description.classList.add("past")
-    } else if (i>currentHour){
+    } else if (i > currentHour) {
         description.classList.add("future")
     } else {
         description.classList.add("present")
     }
 
-    
-
     description.value = localStorage.getItem(timeFormatted)
-    
     row.appendChild(description)
 
-    var saveButton = document.createElement("button");
+    let saveButton = document.createElement("button");
     saveButton.setAttribute("class", "saveBtn col-1")
-    //save button content
+    saveButton.classList.add("fas", "fa-save")
 
-    var innerText = description.value
+    saveButton.addEventListener("click", function (event) {
+        let innerText = description.value
         localStorage.setItem(timeFormatted, innerText)
-
+    })
     row.appendChild(saveButton)
 
     document.querySelector(".container").appendChild(row)

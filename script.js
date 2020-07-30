@@ -8,9 +8,9 @@ for (let i = startHour; i <= endHour; i++) {
     row.setAttribute("class", "row")
 
     let hour = document.createElement("div");
-    hour.setAttribute("class", "hour col-1")
+    hour.setAttribute("class", "hour col-1 d-flex justify-content-center align-items-center")
     let time = moment(i, "H")
-    let timeFormatted = time.format("hA")
+    let timeFormatted = time.format("ha")
     hour.innerText = timeFormatted
     row.appendChild(hour)
 
@@ -30,8 +30,7 @@ for (let i = startHour; i <= endHour; i++) {
     row.appendChild(description)
 
     let saveButton = document.createElement("button");
-    saveButton.setAttribute("class", "saveBtn col-1")
-    saveButton.classList.add("fas", "fa-save")
+    saveButton.setAttribute("class", "saveBtn col-1 fas fa-save")
 
     saveButton.addEventListener("click", function (event) {
         let innerText = description.value

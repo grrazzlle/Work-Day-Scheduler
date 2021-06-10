@@ -5,9 +5,11 @@
 
   ## Description
 
-  This application allows you to save information for each hour of the work day
+  A simple calendar application that allows the user to save events for each working hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery and uses the [Moment.js](https://momentjs.com/) library to work with date and time
 
-  ![Example image](/Assets/Capture.PNG)
+  ## Demo
+
+  ![Example image](Assets/05-third-party-apis-homework-demo.gif)
 
   ## Table of contents
 
@@ -32,7 +34,7 @@
   None 
   Find licence info [here](https://choosealicense.com/)
 
-  ## Contributoring
+  ## Contributing
 
   Self
 
